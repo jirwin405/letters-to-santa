@@ -47,7 +47,7 @@
   <div class="card">
     <h2>Send a Message to Santa Claus</h2>
     <p>
-      Ho ho ho! Welcome, my friend!<br><br>
+      Ho ho ho! Welcome, my friend! 🎅<br><br>
       This magical place lets you write directly to Santa Claus at the North Pole.
       Ask questions, share your Christmas wishes, or just say hello!
     </p>
@@ -56,14 +56,26 @@
     </p>
   </div>
 
-  <!-- 🎅 BOTPRESS CHATBOT EMBED CODE GOES HERE -->
-  <!-- Replace the following example code with your actual Botpress embed code -->
-  <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+  <!-- BOTCHAT EMBED -->
+  <div id="webchat" style="width: 500px; height: 500px;"></div>
+  <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
   <script>
-    window.botpressWebChat.init({
-      botId: '8a4dc977-6fd8-48d0-873a-c94c01a00aa4',
-      host: 'https://cdn.botpress.cloud/webchat',
-    })
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+    window.botpress.init({
+      "botId": "8a4dc977-6fd8-48d0-873a-c94c01a00aa4",
+      "configuration": {
+        "version": "v2",
+        "botName": "Santa Claus",
+        "color": "#3276EA",
+        "themeMode": "light",
+        "fontFamily": "inter",
+        "radius": 4,
+        "feedbackEnabled": false
+      },
+      "selector": "#webchat"
+    });
   </script>
 
   <footer>
@@ -72,4 +84,3 @@
 
 </body>
 </html>
-
