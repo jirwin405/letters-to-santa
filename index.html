@@ -62,7 +62,61 @@
     </p>
   </div>
 
-  <!-- 🎅 BOTPRESS CHATBOT EMBED CODE GOES HERE -->
+
+<!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+<!-- In your <body> tag -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "8a4dc977-6fd8-48d0-873a-c94c01a00aa4",
+  "configuration": {
+    "version": "v2",
+    "botName": "Friendly Helper",
+    "botDescription": "",
+    "website": {},
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#3276EA",
+    "variant": "solid",
+    "headerVariant": "glass",
+    "themeMode": "light",
+    "fontFamily": "inter",
+    "radius": 4,
+    "feedbackEnabled": false,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+    "soundEnabled": false,
+    "proactiveMessageEnabled": false,
+    "proactiveBubbleMessage": "Hi! 👋 Need help?",
+    "proactiveBubbleTriggerType": "afterDelay",
+    "proactiveBubbleDelayTime": 10
+  },
+  "clientId": "04128d16-aec6-46a0-98d1-453e67ebf90c",
+  "selector": "#webchat"
+});
+</script>
+
 
   <footer>
     Made with Christmas magic ✨
